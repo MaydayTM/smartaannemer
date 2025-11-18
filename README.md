@@ -1,4 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SmartAannemer - Renovation Lead Finder
+
+A Next.js application that helps homeowners find verified contractors for renovation projects (roof, facade, insulation, solar panels) in Belgium.
+
+## 📊 Project Status
+
+**Current Phase:** Landing Page Complete ✅
+**Next Phase:** Credit System & Lead Finder Tool
+**Branch:** `feature/nextjs-setup`
+
+### ✅ Completed
+- Project foundation (Next.js 14, TypeScript, Tailwind)
+- Supabase database setup (contractors, leads, credit_sessions)
+- Landing page with 6 sections:
+  - Hero with 3D viewer
+  - Quality Label verification
+  - How It Works (4-step process)
+  - Customer Reviews
+  - FAQ (interactive accordion)
+  - Navbar & Footer
+
+### 🚧 Next Steps
+See `PROGRESS.md` for detailed next steps and implementation plan.
+
+---
 
 ## Environment Setup
 
