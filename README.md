@@ -29,11 +29,22 @@ To set up the database locally:
 
 ### Seed Demo Data
 
+To populate the database with demo contractor data:
+
 ```bash
-npx supabase db reset  # Resets and seeds
-# Or manually:
+# Option 1: Reset database and apply seed (recommended for local development)
+npx supabase db reset
+
+# Option 2: Apply seed data to existing database
 psql $DATABASE_URL < supabase/seed.sql
 ```
+
+The seed data includes 3 verified contractors:
+- **Dak & Gevel BV** (Antwerpen) - Roof and facade specialist with solar
+- **Isolatie+ Collectief** (Leuven) - Insulation specialist collective
+- **RenovaPro** (Gent) - Full-service renovation with all capabilities
+
+All contractors are marked as verified, financially healthy, and eligible for guidance on renovation premiums.
 
 ## Getting Started
 
