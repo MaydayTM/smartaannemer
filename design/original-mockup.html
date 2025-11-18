@@ -1,0 +1,1080 @@
+<html lang="nl"><head>
+  <meta charset="UTF-8">
+  <title>SmartAannemer – Vind de juiste aannemer voor jouw renovatie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-50 antialiased font-sans">
+  <div class="min-h-screen flex flex-col">
+    <!-- ================= NAVBAR ================= -->
+    <header class="sticky top-0 z-40 bg-slate-950/80 backdrop-blur border-b border-slate-800">
+      <div class="max-w-6xl mx-auto flex items-center justify-between gap-4 py-3 px-4">
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <div class="rounded-md bg-sky-500/10 border border-sky-500/50 text-sky-300 text-xs tracking-tight font-semibold h-8 w-8 flex items-center justify-center">
+            S
+          </div>
+          <div class="flex flex-col leading-tight">
+            <span class="text-sm md:text-base tracking-tight font-semibold text-slate-50">SmartAannemer</span>
+            <span class="text-xs md:text-sm text-slate-400">Renovatie &amp; energie-upgrade</span>
+          </div>
+        </div>
+
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm md:text-base">
+          <a href="#how" class="text-slate-300 hover:text-slate-50 transition-colors">Hoe het werkt</a>
+          <a href="#quality" class="text-slate-300 hover:text-slate-50 transition-colors">Kwaliteitslabel</a>
+          <a href="#reviews" class="text-slate-300 hover:text-slate-50 transition-colors">Reviews</a>
+          <a href="#tool" class="text-slate-300 hover:text-slate-50 transition-colors">Tool</a>
+        </nav>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-2">
+          <button class="hidden md:inline-flex items-center gap-1 rounded-full border border-slate-700 bg-slate-900/80 px-4 py-1.5 text-xs md:text-sm text-slate-100 hover:border-slate-500 hover:bg-slate-900 transition-colors">
+            <span>Log in</span>
+          </button>
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 p-2 text-slate-100 hover:border-slate-500 hover:bg-slate-900 transition-colors" aria-label="Open menu">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden border-t border-slate-800 bg-slate-950/95">
+        <nav class="flex flex-col px-4 py-3 text-sm">
+          <a href="#how" class="py-2 text-slate-200 hover:text-sky-300">Hoe het werkt</a>
+          <a href="#quality" class="py-2 text-slate-200 hover:text-sky-300">Kwaliteitslabel</a>
+          <a href="#reviews" class="py-2 text-slate-200 hover:text-sky-300">Reviews</a>
+          <a href="#tool" class="py-2 text-slate-200 hover:text-sky-300">Tool</a>
+          <button class="mt-2 inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/80 px-4 py-2 text-xs text-slate-100 hover:border-slate-500 hover:bg-slate-900 transition-colors">
+            Log in
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <!-- ================= HERO ================= -->
+      <section class="border-b border-slate-900 bg-gradient-to-b from-slate-950 to-slate-950/90">
+        <div class="max-w-6xl mx-auto px-4 pt-8 pb-12 md:pt-16 md:pb-20 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <!-- Hero copy -->
+          <div class="space-y-6">
+            <div class="inline-flex items-center gap-2 rounded-full border border-sky-500/20 bg-sky-500/5 px-3 py-1 text-xs md:text-sm text-sky-200">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              <span>AI-gestuurde renovatie &amp; energietool</span>
+            </div>
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-50">
+              Vind de juiste aannemer voor jouw renovatie in 60 seconden
+            </h1>
+            <p class="text-base md:text-lg text-slate-300">
+              Vul je adres in, gebruik je <span class="font-semibold text-sky-200">gratis krediet</span> en krijg een indicatieve offerte plus een match met een bewezen bouwpartner voor dak-, gevel-, isolatie- of zonneprojecten.
+            </p>
+
+            <div class="space-y-3">
+              <button id="hero-cta" class="inline-flex items-center justify-center rounded-full bg-amber-400 text-slate-950 text-sm md:text-base font-semibold tracking-tight px-6 py-2.5 shadow-lg shadow-amber-400/30 hover:bg-amber-300 transition-colors">
+                Gebruik mijn gratis krediet
+                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+              </button>
+              <button id="hero-how" class="block text-xs md:text-sm text-slate-300 hover:text-sky-200 underline-offset-4 hover:underline">
+                Bekijk eerst hoe het werkt
+              </button>
+            </div>
+
+            <!-- Badges -->
+            <div class="flex flex-wrap gap-2 pt-2">
+              <div class="inline-flex items-center gap-1 rounded-full bg-slate-900/80 border border-slate-700 px-3 py-1 text-xs md:text-sm text-slate-100">
+                <i data-lucide="gift" class="w-3.5 h-3.5 text-amber-300"></i>
+                <span>1 gratis krediet</span>
+              </div>
+              <div class="inline-flex items-center gap-1 rounded-full bg-slate-900/80 border border-slate-700 px-3 py-1 text-xs md:text-sm text-slate-100">
+                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-300"></i>
+                <span>Geselecteerde kwaliteitsbedrijven</span>
+              </div>
+              <div class="inline-flex items-center gap-1 rounded-full bg-slate-900/80 border border-slate-700 px-3 py-1 text-xs md:text-sm text-slate-100">
+                <i data-lucide="home" class="w-3.5 h-3.5 text-sky-300"></i>
+                <span>Dak, gevel, isolatie &amp; zonnepanelen</span>
+              </div>
+            </div>
+
+            <!-- Trust line -->
+            <div class="flex flex-wrap items-center gap-3 pt-2 text-xs md:text-sm text-slate-400">
+              <div class="inline-flex items-center gap-1.5">
+                <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-300"></i>
+                <span>Alle aannemers vooraf gescreend</span>
+              </div>
+              <div class="inline-flex items-center gap-1.5">
+                <i data-lucide="award" class="w-3.5 h-3.5 text-sky-300"></i>
+                <span>Focus op Belgische renovatiepremies</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero 3D viewer placeholder -->
+          <div class="relative">
+            <div class="relative rounded-2xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 shadow-xl shadow-sky-500/10 overflow-hidden">
+              <!-- Fake toolbar -->
+              <div class="flex items-center justify-between px-3 py-2 border-b border-slate-800 bg-slate-950/80">
+                <div class="flex items-center gap-1.5">
+                  <span class="h-2 w-2 rounded-full bg-rose-400/70"></span>
+                  <span class="h-2 w-2 rounded-full bg-amber-300/70"></span>
+                  <span class="h-2 w-2 rounded-full bg-emerald-300/70"></span>
+                </div>
+                <div class="flex items-center gap-2 text-[0.65rem] md:text-xs text-slate-400">
+                  <i data-lucide="cpu" class="w-3.5 h-3.5 text-sky-300"></i>
+                  <span>AI 3D renovatiescan</span>
+                </div>
+              </div>
+
+              <!-- Main viewer area -->
+              <div class="relative aspect-video bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 flex items-center justify-center">
+                <!-- House illustration placeholder -->
+                <div class="relative w-[82%] max-w-md">
+                  <div class="absolute inset-0 bg-sky-500/15 blur-3xl rounded-full"></div>
+                  <div class="relative">
+                    <div class="rounded-xl border border-sky-400/60 bg-slate-900/80 p-4 shadow-lg shadow-sky-500/30">
+                      <!-- Roof -->
+                      <div class="mx-auto w-3/4 h-5 md:h-6 bg-gradient-to-r from-slate-800 to-slate-700 rounded-t-md border-x border-t border-slate-600"></div>
+                      <!-- House body -->
+                      <div class="mx-auto w-3/4 bg-gradient-to-br from-slate-900 to-slate-800 border border-slate-600 rounded-b-xl pt-6 pb-5 px-4 mt-0.5">
+                        <div class="grid grid-cols-3 gap-2">
+                          <div class="col-span-2 space-y-2">
+                            <div class="h-3 md:h-4 rounded bg-slate-700/80"></div>
+                            <div class="h-3 md:h-4 rounded bg-slate-700/70"></div>
+                            <div class="h-3 md:h-4 rounded bg-slate-700/60 w-3/4"></div>
+                          </div>
+                          <div class="flex flex-col justify-between items-end">
+                            <div class="h-5 w-8 md:h-6 md:w-10 rounded bg-sky-500/40 border border-sky-400/30"></div>
+                            <div class="h-5 w-8 md:h-6 md:w-10 rounded bg-emerald-500/30 border border-emerald-400/30"></div>
+                          </div>
+                        </div>
+                        <div class="mt-3 grid grid-cols-4 gap-2">
+                          <div class="col-span-2 h-5 md:h-6 rounded bg-slate-700/70"></div>
+                          <div class="h-5 md:h-6 rounded bg-slate-700/60"></div>
+                          <div class="h-5 md:h-6 rounded bg-slate-700/60"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Viewer controls -->
+                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-full bg-slate-950/80 border border-slate-700/80 px-3 py-1.5 text-[0.65rem] md:text-xs text-slate-200 backdrop-blur">
+                  <button class="inline-flex items-center justify-center rounded-full bg-slate-800/80 border border-slate-600/80 p-1.5 hover:bg-slate-700/80 transition-colors">
+                    <i data-lucide="rotate-3d" class="w-3.5 h-3.5"></i>
+                  </button>
+                  <button class="inline-flex items-center justify-center rounded-full bg-slate-800/80 border border-slate-600/80 p-1.5 hover:bg-slate-700/80 transition-colors">
+                    <i data-lucide="zoom-in" class="w-3.5 h-3.5"></i>
+                  </button>
+                  <button class="inline-flex items-center justify-center rounded-full bg-sky-500 text-slate-950 font-semibold px-2.5 py-1 text-[0.65rem] hover:bg-sky-400 transition-colors">
+                    <i data-lucide="play" class="w-3 h-3 mr-1"></i>
+                    Bekijk renovatie
+                  </button>
+                </div>
+
+                <!-- Overlay label -->
+                <div class="absolute top-3 left-3 rounded-full bg-slate-950/90 border border-slate-700/80 px-3 py-1 text-[0.65rem] md:text-xs text-slate-100 flex items-center gap-2">
+                  <span class="inline-flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/40">
+                    <i data-lucide="check" class="w-3 h-3 text-emerald-300"></i>
+                  </span>
+                  <span>Deze tevreden klant vond zijn renovatiematch via deze tool.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating stats card -->
+            <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 md:-right-4 md:left-auto md:translate-x-0 rounded-xl bg-slate-900/95 border border-slate-700 shadow-lg shadow-sky-500/20 px-4 py-3 flex items-center gap-4 backdrop-blur text-xs md:text-sm">
+              <div class="flex flex-col">
+                <span class="text-slate-400">Gemiddelde besparing</span>
+                <span class="font-semibold tracking-tight text-emerald-300">tot €4.800</span>
+                <span class="text-slate-500 text-[0.65rem] md:text-xs">met isolatie &amp; zonnepanelen *</span>
+              </div>
+              <div class="h-10 w-px bg-slate-700 hidden sm:block"></div>
+              <div class="flex items-center gap-2">
+                <div class="h-7 w-7 rounded-full bg-emerald-500/15 border border-emerald-500/50 flex items-center justify-center">
+                  <i data-lucide="shield-check" class="w-4 h-4 text-emerald-300"></i>
+                </div>
+                <div class="flex flex-col">
+                  <span class="text-slate-400 text-[0.65rem] md:text-xs">Aannemers geverifieerd</span>
+                  <span class="text-slate-100 text-xs md:text-sm">100+ projecten/jaar</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= KWALITEITSLABEL ================= -->
+      <section id="quality" class="border-b border-slate-900 bg-slate-950">
+        <div class="max-w-6xl mx-auto px-4 py-10 md:py-14">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-slate-50">
+              Ons kwaliteitslabel
+            </h2>
+            <p class="mt-3 text-base md:text-lg text-slate-300">
+              We werken uitsluitend met betrouwbare aannemers die we grondig screenen op vakmanschap, klantenservice en financiële gezondheid. Zo ben jij zeker van een renovatie die blijft staan.
+            </p>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <!-- Card 1 -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 md:p-5 flex flex-col gap-3">
+              <div class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-sky-500/15 border border-sky-400/40">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-sky-300"></i>
+              </div>
+              <h3 class="text-base md:text-lg font-semibold tracking-tight text-slate-50">
+                Geselecteerde bedrijven
+              </h3>
+              <p class="text-sm md:text-base text-slate-300">
+                We werken enkel met aannemers die garanties bieden en bewezen kwaliteit leveren op dak-, gevel-, isolatie- en zonneprojecten.
+              </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 md:p-5 flex flex-col gap-3">
+              <div class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-emerald-500/15 border border-emerald-400/40">
+                <i data-lucide="line-chart" class="w-4 h-4 text-emerald-300"></i>
+              </div>
+              <h3 class="text-base md:text-lg font-semibold tracking-tight text-slate-50">
+                Gezonde financiële basis
+              </h3>
+              <p class="text-sm md:text-base text-slate-300">
+                Onze partners worden gescreend op een gezonde financiële situatie en continuïteit, zodat je niet met half afgewerkte werven blijft zitten.
+              </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 md:p-5 flex flex-col gap-3">
+              <div class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-amber-500/15 border border-amber-400/40">
+                <i data-lucide="route" class="w-4 h-4 text-amber-300"></i>
+              </div>
+              <h3 class="text-base md:text-lg font-semibold tracking-tight text-slate-50">
+                Begeleiding van A tot Z
+              </h3>
+              <p class="text-sm md:text-base text-slate-300">
+                Van eerste offerte tot aanvraag van premies – jij krijgt één duidelijk aanspreekpunt en begeleiding doorheen het volledige traject.
+              </p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 md:p-5 flex flex-col gap-3">
+              <div class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-indigo-500/15 border border-indigo-400/40">
+                <i data-lucide="scale" class="w-4 h-4 text-indigo-300"></i>
+              </div>
+              <h3 class="text-base md:text-lg font-semibold tracking-tight text-slate-50">
+                Prijs-kwaliteit in balans
+              </h3>
+              <p class="text-sm md:text-base text-slate-300">
+                Geen dubbeltje te veel, geen twijfel over de kwaliteit. De tool helpt je de juiste prijsvork te zien voor jouw type woning.
+              </p>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 md:p-5 flex flex-col gap-3">
+              <div class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-sky-500/15 border border-sky-400/40">
+                <i data-lucide="flag" class="w-4 h-4 text-sky-300"></i>
+              </div>
+              <h3 class="text-base md:text-lg font-semibold tracking-tight text-slate-50">
+                Focus op Belgische bouwprojecten
+              </h3>
+              <p class="text-sm md:text-base text-slate-300">
+                Voor en door de Belgische renovatiemarkt. De inschattingen en partners zijn afgestemd op Vlaamse en Waalse regelgeving en premies.
+              </p>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 md:p-5 flex flex-col gap-3">
+              <div class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-rose-500/15 border border-rose-400/40">
+                <i data-lucide="smile-plus" class="w-4 h-4 text-rose-300"></i>
+              </div>
+              <h3 class="text-base md:text-lg font-semibold tracking-tight text-slate-50">
+                Rust in je renovatie
+              </h3>
+              <p class="text-sm md:text-base text-slate-300">
+                Geen eindeloze telefoons, geen onduidelijke offertes. Eén tool, één overzicht, en slechts een handvol relevante aannemers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= HOE WERKT HET ================= -->
+      <section id="how" class="border-b border-slate-900 bg-slate-950">
+        <div class="max-w-6xl mx-auto px-4 py-10 md:py-14">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-slate-50">
+              Hoe werkt de tool?
+            </h2>
+            <p class="mt-3 text-base md:text-lg text-slate-300">
+              In minder dan een minuut krijg je een indicatieve offerte én een match met de juiste aannemer, volledig afgestemd op jouw woning.
+            </p>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5">
+            <!-- Step 1 -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <div class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/15 border border-sky-400/40 text-xs text-sky-200 font-semibold">
+                  1
+                </div>
+                <i data-lucide="map-pin" class="w-4 h-4 text-slate-400"></i>
+              </div>
+              <h3 class="text-base md:text-lg font-semibold tracking-tight text-slate-50">
+                Vul je adres in
+              </h3>
+              <p class="text-sm md:text-base text-slate-300">
+                Je gebruikt je gratis krediet en geeft je adres en type project in (dakrenovatie, gevelrenovatie, isolatie of zonnepanelen).
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <div class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/15 border border-sky-400/40 text-xs text-sky-200 font-semibold">
+                  2
+                </div>
+                <i data-lucide="sparkles" class="w-4 h-4 text-slate-400"></i>
+              </div>
+              <h3 class="text-base md:text-lg font-semibold tracking-tight text-slate-50">
+                AI maakt een inschatting
+              </h3>
+              <p class="text-sm md:text-base text-slate-300">
+                We schatten de grootte en complexiteit van je project op basis van je woningtype en projectkeuze.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <div class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/15 border border-sky-400/40 text-xs text-sky-200 font-semibold">
+                  3
+                </div>
+                <i data-lucide="receipt-euro" class="w-4 h-4 text-slate-400"></i>
+              </div>
+              <h3 class="text-base md:text-lg font-semibold tracking-tight text-slate-50">
+                Krijg een indicatieve offerte
+              </h3>
+              <p class="text-sm md:text-base text-slate-300">
+                Je ziet meteen een richtprijs met duidelijke opbouw per onderdeel (materiaal, werkuren, isolatie, steiger, ...).
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <div class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sky-500/15 border border-sky-400/40 text-xs text-sky-200 font-semibold">
+                  4
+                </div>
+                <i data-lucide="users" class="w-4 h-4 text-slate-400"></i>
+              </div>
+              <h3 class="text-base md:text-lg font-semibold tracking-tight text-slate-50">
+                Wij matchen je met een aannemer
+              </h3>
+              <p class="text-sm md:text-base text-slate-300">
+                We stellen 1–3 geschikte, bewezen partners voor in jouw regio. Jij kiest met wie je verder gaat.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-6 rounded-2xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 flex items-start gap-3 text-xs md:text-sm text-amber-100">
+            <i data-lucide="info" class="w-4 h-4 mt-0.5"></i>
+            <p>
+              Let op: de premies en subsidies veranderen snel. Onze partners helpen je maximaal voordeel te halen binnen het huidige subsidiekader en bekijken mee welke <span class="font-semibold">renovatiepremies</span> voor jou van toepassing zijn.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= REVIEWS ================= -->
+      <section id="reviews" class="border-b border-slate-900 bg-slate-950">
+        <div class="max-w-6xl mx-auto px-4 py-10 md:py-14">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+              <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-slate-50">
+                Wat zeggen gebruikers?
+              </h2>
+              <p class="mt-3 text-base md:text-lg text-slate-300">
+                Belgische eigenaars die hun dak, gevel of isolatieproject via onze tool hebben gestart.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 text-xs md:text-sm text-slate-300">
+              <i data-lucide="star" class="w-4 h-4 text-amber-300"></i>
+              <span class="font-semibold tracking-tight">4,8/5</span>
+              <span class="text-slate-400">gemiddelde tevredenheid</span>
+            </div>
+          </div>
+
+          <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+            <!-- Review 1 -->
+            <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-sm md:text-base font-semibold tracking-tight text-slate-50">Sofie, Gent</h3>
+                  <p class="text-xs md:text-sm text-slate-400">Gevelrenovatie &amp; isolatie</p>
+                </div>
+                <div class="flex items-center gap-1">
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
+                  <i data-lucide="star-half" class="w-3.5 h-3.5 text-amber-300"></i>
+                </div>
+              </div>
+              <p class="text-sm md:text-base text-slate-300">
+                Ik wist niet waar te beginnen. Dankzij de tool had ik in één keer een duidelijke richtprijs en een aannemer die bij ons paste. Geen gedoe met vijf verschillende offertes.
+              </p>
+            </article>
+
+            <!-- Review 2 -->
+            <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-sm md:text-base font-semibold tracking-tight text-slate-50">Tom &amp; Lien, Leuven</h3>
+                  <p class="text-xs md:text-sm text-slate-400">Dakrenovatie</p>
+                </div>
+                <div class="flex items-center gap-1">
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
+                </div>
+              </div>
+              <p class="text-sm md:text-base text-slate-300">
+                De indicatieve offerte zat verrassend dicht bij de uiteindelijke prijs. De aannemer heeft ook geholpen met de premie-aanvraag, wat ons veel tijd heeft bespaard.
+              </p>
+            </article>
+
+            <!-- Review 3 -->
+            <article class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-sm md:text-base font-semibold tracking-tight text-slate-50">Patrick, Mechelen</h3>
+                  <p class="text-xs md:text-sm text-slate-400">Zonnepanelen &amp; isolatie</p>
+                </div>
+                <div class="flex items-center gap-1">
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
+                  <i data-lucide="star" class="w-3.5 h-3.5 text-amber-300"></i>
+                </div>
+              </div>
+              <p class="text-sm md:text-base text-slate-300">
+                Heel aangenaam dat er maar enkele, echt relevante bedrijven voorgesteld werden. De opvolging was duidelijk en professioneel.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TOOL ================= -->
+      <section id="tool" class="border-b border-slate-900 bg-slate-950">
+        <div class="max-w-6xl mx-auto px-4 py-10 md:py-14">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+              <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-slate-50">
+                Gebruik je gratis krediet
+              </h2>
+              <p class="mt-3 text-base md:text-lg text-slate-300">
+                Je hebt <span class="font-semibold text-emerald-300">1 gratis krediet</span> om de tool te gebruiken. Vul hieronder je gegevens in en ontdek jouw indicatieve offerte en match met een aannemer.
+              </p>
+            </div>
+            <div class="text-xs md:text-sm text-slate-400">
+              <span class="font-semibold text-slate-200">Geen bindende offerte,</span> wel een realistische inschatting op basis van de Belgische renovatiemarkt.
+            </div>
+          </div>
+
+          <!-- Credit status bar -->
+          <div class="mt-6 grid gap-3 md:grid-cols-2">
+            <!-- State: gratis krediet beschikbaar -->
+            <div id="credit-state-active" class="rounded-2xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 flex items-center justify-between gap-3 text-xs md:text-sm text-emerald-100">
+              <div class="flex items-center gap-2">
+                <div class="inline-flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/50">
+                  <i data-lucide="battery-charging" class="w-4 h-4"></i>
+                </div>
+                <div class="flex flex-col">
+                  <span class="uppercase tracking-tight text-[0.6rem] md:text-[0.65rem] text-emerald-300">Kredietstatus</span>
+                  <span class="font-semibold tracking-tight text-emerald-100">1/1 gratis krediet beschikbaar</span>
+                </div>
+              </div>
+              <div class="hidden sm:flex flex-col items-end gap-1 text-[0.65rem] md:text-xs">
+                <span>Na dit gebruik kan je extra credits aankopen.</span>
+                <button id="more-credits-btn" class="inline-flex items-center gap-1 text-emerald-100 underline underline-offset-4 decoration-emerald-400/70 hover:text-emerald-50">
+                  Meer weten
+                  <i data-lucide="chevron-right" class="w-3 h-3"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- State: krediet opgebruikt (demo) -->
+            <div id="credit-state-empty" class="rounded-2xl border border-amber-500/40 bg-amber-500/10 px-4 py-3 flex items-center justify-between gap-3 text-xs md:text-sm text-amber-100">
+              <div class="flex items-center gap-2">
+                <div class="inline h-7 w-7 items-center justify-center rounded-full bg-amber-500/20 border border-amber-400/50">
+                  <i data-lucide="battery" class="w-4 h-4"></i>
+                </div>
+                <div class="flex flex-col">
+                  <span class="uppercase tracking-tight text-[0.6rem] md:text-[0.65rem] text-amber-300">Kredietstatus</span>
+                  <span class="font-semibold tracking-tight text-amber-100">0/1 gratis krediet beschikbaar</span>
+                </div>
+              </div>
+              <div class="flex flex-col items-end gap-1 text-[0.65rem] md:text-xs">
+                <span>Je gratis krediet is al gebruikt.</span>
+                <button id="discover-credits-btn" class="inline-flex items-center gap-1 rounded-full border border-amber-400/60 bg-amber-500/10 px-3 py-1 text-amber-50 hover:bg-amber-500/20 transition-colors">
+                  Ontdek credits
+                  <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tool layout -->
+          <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+            <!-- Left: Inputs -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 md:p-5 flex flex-col gap-5">
+              <!-- Section 1 -->
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-2">
+                    <div class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-500/15 border border-sky-400/40 text-[0.65rem] text-sky-200 font-semibold">
+                      1
+                    </div>
+                    <h3 class="text-sm md:text-base font-semibold tracking-tight text-slate-50">Adres &amp; projecttype</h3>
+                  </div>
+                  <button class="text-[0.65rem] md:text-xs text-slate-400 hover:text-sky-200 inline-flex items-center gap-1">
+                    <i data-lucide="map-pin" class="w-3 h-3"></i>
+                    Locatie detecteren
+                  </button>
+                </div>
+                <div class="space-y-3">
+                  <!-- Address -->
+                  <div class="space-y-1.5">
+                    <label for="address" class="text-xs md:text-sm text-slate-200">Adres van de woning</label>
+                    <div class="relative">
+                      <i data-lucide="search" class="w-4 h-4 text-slate-500 absolute left-3 top-2.5"></i>
+                      <input id="address" type="text" placeholder="Straat, nummer, postcode, gemeente" class="w-full rounded-xl border border-slate-700 bg-slate-950/60 pl-9 pr-3 py-2 text-xs md:text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 transition-shadow">
+                    </div>
+                  </div>
+                  <!-- Project type pills -->
+                  <div class="space-y-1.5">
+                    <span class="text-xs md:text-sm text-slate-200">Type project</span>
+                    <div class="flex flex-wrap gap-2">
+                      <button data-project-type="Dakrenovatie" class="project-type-pill inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs md:text-sm text-slate-100 hover:border-sky-500 hover:bg-slate-900 transition-colors">
+                        <i data-lucide="home" class="w-3.5 h-3.5 text-sky-300"></i>
+                        Dakrenovatie
+                      </button>
+                      <button data-project-type="Gevelrenovatie" class="project-type-pill inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs md:text-sm text-slate-100 hover:border-sky-500 hover:bg-slate-900 transition-colors">
+                        <i data-lucide="wall" class="w-3.5 h-3.5 text-sky-300"></i>
+                        Gevelrenovatie
+                      </button>
+                      <button data-project-type="Isolatie" class="project-type-pill inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs md:text-sm text-slate-100 hover:border-sky-500 hover:bg-slate-900 transition-colors">
+                        <i data-lucide="layers" class="w-3.5 h-3.5 text-sky-300"></i>
+                        Isolatie
+                      </button>
+                      <button data-project-type="Zonnepanelen" class="project-type-pill inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs md:text-sm text-slate-100 hover:border-sky-500 hover:bg-slate-900 transition-colors">
+                        <i data-lucide="sun-medium" class="w-3.5 h-3.5 text-sky-300"></i>
+                        Zonnepanelen
+                      </button>
+                      <button data-project-type="Combinatie" class="project-type-pill inline-flex items-center gap-1.5 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1.5 text-xs md:text-sm text-slate-100 hover:border-sky-500 hover:bg-slate-900 transition-colors">
+                        <i data-lucide="plus-circle" class="w-3.5 h-3.5 text-sky-300"></i>
+                        Combinatie
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="border-slate-800">
+
+              <!-- Section 2 -->
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <div class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-500/15 border border-sky-400/40 text-[0.65rem] text-sky-200 font-semibold">
+                    2
+                  </div>
+                  <h3 class="text-sm md:text-base font-semibold tracking-tight text-slate-50">Basisinformatie</h3>
+                </div>
+                <div class="space-y-3">
+                  <!-- Bouwjaar + woningtype -->
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div class="space-y-1.5">
+                      <label for="year" class="text-xs md:text-sm text-slate-200">Bouwjaar</label>
+                      <input id="year" type="number" placeholder="bv. 1975" class="w-full rounded-xl border border-slate-700 bg-slate-950/60 px-3 py-2 text-xs md:text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 transition-shadow">
+                    </div>
+                    <div class="space-y-1.5">
+                      <span class="text-xs md:text-sm text-slate-200">Type woning</span>
+                      <div class="grid grid-cols-2 gap-2">
+                        <button data-house-type="Rijwoning" class="house-type-btn inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-950/60 px-2.5 py-1.5 text-[0.7rem] md:text-xs text-slate-100 hover:border-sky-500 hover:bg-slate-900 transition-colors">
+                          <i data-lucide="panels-top-left" class="w-3.5 h-3.5 text-slate-300"></i>
+                          Rijwoning
+                        </button>
+                        <button data-house-type="Halfopen" class="house-type-btn inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-950/60 px-2.5 py-1.5 text-[0.7rem] md:text-xs text-slate-100 hover:border-sky-500 hover:bg-slate-900 transition-colors">
+                          <i data-lucide="panel-left" class="w-3.5 h-3.5 text-slate-300"></i>
+                          Halfopen
+                        </button>
+                        <button data-house-type="Open bebouwing" class="house-type-btn inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-950/60 px-2.5 py-1.5 text-[0.7rem] md:text-xs text-slate-100 hover:border-sky-500 hover:bg-slate-900 transition-colors">
+                          <i data-lucide="square" class="w-3.5 h-3.5 text-slate-300"></i>
+                          Open bebouwing
+                        </button>
+                        <button data-house-type="Appartement" class="house-type-btn inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-950/60 px-2.5 py-1.5 text-[0.7rem] md:text-xs text-slate-100 hover:border-sky-500 hover:bg-slate-900 transition-colors">
+                          <i data-lucide="building-2" class="w-3.5 h-3.5 text-slate-300"></i>
+                          Appartement
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Urgency pills -->
+                  <div class="space-y-1.5">
+                    <span class="text-xs md:text-sm text-slate-200">Wanneer wil je starten?</span>
+                    <div class="grid grid-cols-2 gap-2">
+                      <button data-urgency="1-3" class="urgency-btn inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-950/60 px-2.5 py-1.5 text-[0.7rem] md:text-xs text-slate-100 hover:border-sky-500 hover:bg-slate-900 transition-colors">
+                        Binnen 1–3 maanden
+                      </button>
+                      <button data-urgency="3-6" class="urgency-btn inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-950/60 px-2.5 py-1.5 text-[0.7rem] md:text-xs text-slate-100 hover:border-sky-500 hover:bg-slate-900 transition-colors">
+                        3–6 maanden
+                      </button>
+                      <button data-urgency="6-12" class="urgency-btn inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-950/60 px-2.5 py-1.5 text-[0.7rem] md:text-xs text-slate-100 hover:border-sky-500 hover:bg-slate-900 transition-colors">
+                        6–12 maanden
+                      </button>
+                      <button data-urgency="Verkennen" class="urgency-btn inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-950/60 px-2.5 py-1.5 text-[0.7rem] md:text-xs text-slate-100 hover:border-sky-500 hover:bg-slate-900 transition-colors">
+                        Ik ben gewoon aan het verkennen
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <hr class="border-slate-800">
+
+              <!-- Section 3 -->
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <div class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-500/15 border border-sky-400/40 text-[0.65rem] text-sky-200 font-semibold">
+                    3
+                  </div>
+                  <h3 class="text-sm md:text-base font-semibold tracking-tight text-slate-50">Budget &amp; prioriteiten</h3>
+                </div>
+                <div class="space-y-3">
+                  <!-- Budget range (simulated) -->
+                  <div class="space-y-2">
+                    <div class="flex items-center justify-between text-xs md:text-sm text-slate-200">
+                      <span>Indicatieve budgetrange</span>
+                      <span id="budget-label" class="font-semibold text-sky-200">€10.000 – €30.000</span>
+                    </div>
+                    <div class="space-y-1">
+                      <input id="budget-range" type="range" min="0" max="100" value="40" class="w-full accent-sky-400">
+                      <div class="flex items-center justify-between text-[0.65rem] md:text-xs text-slate-500">
+                        <span>€5.000</span>
+                        <span>€50.000+</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Priority toggle -->
+                  <div class="space-y-2">
+                    <span class="text-xs md:text-sm text-slate-200">Wat is voor jou belangrijker?</span>
+                    <div class="flex items-center gap-2 rounded-full bg-slate-950/60 border border-slate-700 p-1">
+                      <button data-priority="Prijs" class="priority-pill flex-1 inline-flex items-center justify-center rounded-full px-2 py-1.5 text-[0.7rem] md:text-xs text-slate-100 hover:text-slate-950 hover:bg-sky-400/90 transition-colors">
+                        Laagste prijs
+                      </button>
+                      <button data-priority="Balans" class="priority-pill flex-1 inline-flex items-center justify-center rounded-full px-2 py-1.5 text-[0.7rem] md:text-xs text-slate-100 hover:text-slate-950 hover:bg-sky-400/90 transition-colors">
+                        Balans
+                      </button>
+                      <button data-priority="Kwaliteit" class="priority-pill flex-1 inline-flex items-center justify-center rounded-full px-2 py-1.5 text-[0.7rem] md:text-xs text-slate-100 hover:text-slate-950 hover:bg-sky-400/90 transition-colors">
+                        Hoogste kwaliteit
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <div class="pt-1 space-y-2">
+                <button id="use-credit-btn" class="w-full inline-flex items-center justify-center rounded-full bg-amber-400 text-slate-950 text-sm md:text-base font-semibold tracking-tight px-4 py-2.5 shadow-lg shadow-amber-400/30 hover:bg-amber-300 transition-colors">
+                  <span>Gebruik mijn gratis krediet</span>
+                  <i data-lucide="sparkles" class="w-4 h-4 ml-2"></i>
+                </button>
+                <button id="use-credit-disabled" class="w-full inline-flex items-center justify-center rounded-full bg-slate-800 text-slate-500 text-sm md:text-base font-semibold tracking-tight px-4 py-2.5 cursor-not-allowed hidden">
+                  Gratis krediet opgebruikt
+                  <i data-lucide="lock" class="w-4 h-4 ml-2"></i>
+                </button>
+                <p class="text-[0.65rem] md:text-xs text-slate-500">
+                  Dit is een indicatieve raming en geen bindende offerte. De definitieve prijs hangt af van de exacte staat van je woning en de keuzes in materiaal en afwerking.
+                </p>
+              </div>
+            </div>
+
+            <!-- Right: Results -->
+            <div class="space-y-4">
+              <!-- Loading state -->
+              <div id="results-loading" class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 md:p-5 flex flex-col gap-3 hidden">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <div class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></div>
+                    <span class="text-xs md:text-sm text-slate-200 font-semibold tracking-tight">We analyseren je project...</span>
+                  </div>
+                  <span class="text-[0.65rem] md:text-xs text-slate-500">Duurt minder dan 5 seconden</span>
+                </div>
+                <div class="space-y-2 pt-2">
+                  <div class="h-3 md:h-3.5 rounded bg-slate-800 animate-pulse"></div>
+                  <div class="h-3 md:h-3.5 rounded bg-slate-800/80 animate-pulse"></div>
+                  <div class="h-3 md:h-3.5 rounded bg-slate-800/60 animate-pulse"></div>
+                </div>
+              </div>
+
+              <!-- Actual results -->
+              <div id="results-pane" class="rounded-2xl border border-slate-800 bg-slate-900/80 p-4 md:p-5 flex flex-col gap-4 opacity-0 pointer-events-none">
+                <!-- Price card -->
+                <div class="rounded-xl border border-slate-800 bg-slate-950/80 p-4 flex flex-col gap-3">
+                  <div class="flex items-start justify-between">
+                    <div>
+                      <h3 class="text-sm md:text-base font-semibold tracking-tight text-slate-50">
+                        Indicatieve prijs voor jouw project
+                      </h3>
+                      <p class="text-xs md:text-sm text-slate-400 mt-1">
+                        Gebaseerd op jouw woningtype, project en budgetvoorkeur.
+                      </p>
+                    </div>
+                    <div class="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-400/40 px-2.5 py-1 text-[0.65rem] text-emerald-100">
+                      <i data-lucide="sparkles" class="w-3 h-3"></i>
+                      AI-inschatting
+                    </div>
+                  </div>
+                  <div class="flex items-baseline gap-2">
+                    <span id="price-range" class="text-xl md:text-2xl font-semibold tracking-tight text-slate-50">
+                      €18.000 – €24.000
+                    </span>
+                    <span class="text-xs md:text-sm text-slate-400">incl. btw</span>
+                  </div>
+                  <ul class="text-xs md:text-sm text-slate-300 space-y-1">
+                    <li class="flex items-center gap-2">
+                      <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-300"></i>
+                      <span>Inclusief standaardmaterialen en plaatsing</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i data-lucide="info" class="w-3.5 h-3.5 text-slate-400"></i>
+                      <span>Zonder premies: besparing mogelijk via renovatie- &amp; energiepremies</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                      <i data-lucide="alert-circle" class="w-3.5 h-3.5 text-amber-300"></i>
+                      <span>Afhankelijk van de exacte staat van je woning en toegankelijkheid van de werf</span>
+                    </li>
+                  </ul>
+                  <div class="pt-1">
+                    <button id="toggle-breakdown" class="inline-flex items-center gap-1.5 text-xs md:text-sm text-sky-200 hover:text-sky-100">
+                      <i data-lucide="chevron-down" class="w-3.5 h-3.5"></i>
+                      Toon prijsspecificatie
+                    </button>
+                  </div>
+                  <!-- Breakdown -->
+                  <div id="breakdown" class="mt-2 rounded-lg border border-slate-800 bg-slate-950/80 p-3 space-y-2 hidden">
+                    <div class="flex items-center justify-between text-xs md:text-sm text-slate-200">
+                      <span>Materiaal (dak/gevelfinishing)</span>
+                      <span class="font-semibold tracking-tight">€9.000 – €11.500</span>
+                    </div>
+                    <div class="flex items-center justify-between text-xs md:text-sm text-slate-200">
+                      <span>Werkuren &amp; plaatsing</span>
+                      <span class="font-semibold tracking-tight">€5.500 – €7.000</span>
+                    </div>
+                    <div class="flex items-center justify-between text-xs md:text-sm text-slate-200">
+                      <span>Steiger &amp; werforganisatie</span>
+                      <span class="font-semibold tracking-tight">€1.500 – €2.000</span>
+                    </div>
+                    <div class="flex items-center justify-between text-xs md:text-sm text-slate-200">
+                      <span>Isolatiecomponenten</span>
+                      <span class="font-semibold tracking-tight">€2.000 – €3.000</span>
+                    </div>
+                    <p class="text-[0.65rem] md:text-xs text-slate-500 pt-1">
+                      Richtprijzen zijn gebaseerd op recente projecten in België. De definitieve offerte wordt opgemaakt door de gekozen aannemer.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Contractors list -->
+                <div class="space-y-3">
+                  <h4 class="text-sm md:text-base font-semibold tracking-tight text-slate-50 flex items-center gap-2">
+                    Match met aannemer(s)
+                    <span class="text-[0.7rem] md:text-xs text-slate-400 font-normal">1–3 voorstellen in jouw regio</span>
+                  </h4>
+
+                  <!-- Contractor 1 -->
+                  <div class="rounded-xl border border-slate-800 bg-slate-950/80 p-3.5 md:p-4 flex flex-col gap-2">
+                    <div class="flex items-start justify-between gap-3">
+                      <div>
+                        <div class="flex items-center gap-2">
+                          <span class="text-sm md:text-base font-semibold tracking-tight text-slate-50">Dak &amp; Gevel BV</span>
+                          <span class="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 border border-emerald-400/40 px-2 py-0.5 text-[0.65rem] text-emerald-100">
+                            <i data-lucide="shield-check" class="w-3 h-3"></i>
+                            Geverifieerd
+                          </span>
+                        </div>
+                        <p class="text-xs md:text-sm text-slate-400">Regio Antwerpen</p>
+                      </div>
+                      <div class="text-[0.65rem] md:text-xs text-slate-400 text-right">
+                        <span class="block">+120 renovaties/jaar</span>
+                        <span class="block">Score: 4,7/5</span>
+                      </div>
+                    </div>
+                    <p class="text-xs md:text-sm text-slate-300">
+                      Gespecialiseerd in dak- en gevelrenovatie met focus op energie-efficiëntie, isolatie en premie-optimalisatie.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-2 text-[0.65rem] md:text-xs">
+                      <span class="inline-flex items-center gap-1 rounded-full bg-slate-900 border border-slate-700 px-2 py-0.5 text-slate-200">
+                        <i data-lucide="file-badge" class="w-3 h-3"></i>
+                        Begeleiding tot en met premies
+                      </span>
+                      <span class="inline-flex items-center gap-1 rounded-full bg-slate-900 border border-slate-700 px-2 py-0.5 text-slate-200">
+                        <i data-lucide="clock-3" class="w-3 h-3"></i>
+                        Reactie meestal binnen 24u
+                      </span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pt-2">
+                      <button class="contractor-cta w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-sky-500 text-slate-950 text-xs md:text-sm font-semibold tracking-tight px-4 py-2 hover:bg-sky-400 transition-colors" data-contractor="Dak &amp; Gevel BV">
+                        Vraag mijn gratis offerte
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1.5"></i>
+                      </button>
+                      <p class="text-[0.65rem] md:text-xs text-slate-500">
+                        We sturen je gegevens door naar deze partner. Zij nemen contact met je op.
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Contractor 2 -->
+                  <div class="rounded-xl border border-slate-800 bg-slate-950/80 p-3.5 md:p-4 flex flex-col gap-2">
+                    <div class="flex items-start justify-between gap-3">
+                      <div>
+                        <div class="flex items-center gap-2">
+                          <span class="text-sm md:text-base font-semibold tracking-tight text-slate-50">Isolatie+ Collectief</span>
+                          <span class="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 border border-emerald-400/40 px-2 py-0.5 text-[0.65rem] text-emerald-100">
+                            <i data-lucide="shield-check" class="w-3 h-3"></i>
+                            Geverifieerd
+                          </span>
+                        </div>
+                        <p class="text-xs md:text-sm text-slate-400">Vlaams-Brabant &amp; Oost-Vlaanderen</p>
+                      </div>
+                      <div class="text-[0.65rem] md:text-xs text-slate-400 text-right">
+                        <span class="block">Focus: isolatie &amp; dak</span>
+                        <span class="block">Score: 4,6/5</span>
+                      </div>
+                    </div>
+                    <p class="text-xs md:text-sm text-slate-300">
+                      Collectief van isolatiespecialisten die je volledige schil aanpakken voor een lager energieverbruik en betere EPC-score.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-2 text-[0.65rem] md:text-xs">
+                      <span class="inline-flex items-center gap-1 rounded-full bg-slate-900 border border-slate-700 px-2 py-0.5 text-slate-200">
+                        <i data-lucide="leaf" class="w-3 h-3"></i>
+                        Energie-optimale oplossingen
+                      </span>
+                      <span class="inline-flex items-center gap-1 rounded-full bg-slate-900 border border-slate-700 px-2 py-0.5 text-slate-200">
+                        <i data-lucide="file-pen" class="w-3 h-3"></i>
+                        Hulp bij EPC &amp; keuringen
+                      </span>
+                    </div>
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pt-2">
+                      <button class="contractor-cta w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-slate-800 text-slate-100 text-xs md:text-sm font-semibold tracking-tight px-4 py-2 hover:bg-slate-700 transition-colors" data-contractor="Isolatie+ Collectief">
+                        Voeg toe als extra optie
+                        <i data-lucide="plus" class="w-3.5 h-3.5 ml-1.5"></i>
+                      </button>
+                      <p class="text-[0.65rem] md:text-xs text-slate-500">
+                        Je kan later nog wisselen tussen of combineren met andere aannemers.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Lead capture form -->
+                <div id="lead-form-card" class="rounded-xl border border-slate-800 bg-slate-950/80 p-4 md:p-5 space-y-3">
+                  <div class="flex items-start justify-between gap-2">
+                    <div>
+                      <h4 class="text-sm md:text-base font-semibold tracking-tight text-slate-50">
+                        Laat je gegevens achter
+                      </h4>
+                      <p class="text-xs md:text-sm text-slate-400 mt-1">
+                        Zo kunnen we je voorstel en de details van je project delen met de juiste partner.
+                      </p>
+                    </div>
+                    <div id="selected-contractor-badge" class="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-slate-900 border border-slate-700 px-2.5 py-1 text-[0.65rem] text-slate-200">
+                      <i data-lucide="building-2" class="w-3 h-3"></i>
+                      <span id="selected-contractor-label">Nog geen partner gekozen</span>
+                    </div>
+                  </div>
+
+                  <form id="lead-form" class="space-y-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div class="space-y-1.5">
+                        <label for="first-name" class="text-xs md:text-sm text-slate-200">Voornaam</label>
+                        <input id="first-name" type="text" class="w-full rounded-xl border border-slate-700 bg-slate-950/60 px-3 py-2 text-xs md:text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 transition-shadow" placeholder="bv. Emma">
+                      </div>
+                      <div class="space-y-1.5">
+                        <label for="last-name" class="text-xs md:text-sm text-slate-200">Naam</label>
+                        <input id="last-name" type="text" class="w-full rounded-xl border border-slate-700 bg-slate-950/60 px-3 py-2 text-xs md:text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 transition-shadow" placeholder="bv. Janssens">
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div class="space-y-1.5">
+                        <label for="email" class="text-xs md:text-sm text-slate-200">E-mailadres</label>
+                        <input id="email" type="email" class="w-full rounded-xl border border-slate-700 bg-slate-950/60 px-3 py-2 text-xs md:text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 transition-shadow" placeholder="naam@voorbeeld.be">
+                      </div>
+                      <div class="space-y-1.5">
+                        <label for="phone" class="text-xs md:text-sm text-slate-200">Telefoonnummer</label>
+                        <input id="phone" type="tel" class="w-full rounded-xl border border-slate-700 bg-slate-950/60 px-3 py-2 text-xs md:text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 transition-shadow" placeholder="bv. 0470 12 34 56">
+                      </div>
+                    </div>
+                    <div class="space-y-1.5">
+                      <label for="extra-info" class="text-xs md:text-sm text-slate-200">Extra info over jouw project (optioneel)</label>
+                      <textarea id="extra-info" rows="3" class="w-full rounded-xl border border-slate-700 bg-slate-950/60 px-3 py-2 text-xs md:text-sm text-slate-50 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 transition-shadow" placeholder="Beschrijf kort de huidige staat en jouw verwachtingen."></textarea>
+                    </div>
+                    <div class="flex items-start gap-2 text-[0.65rem] md:text-xs text-slate-300">
+                      <!-- Custom checkbox -->
+                      <button type="button" id="privacy-checkbox" class="mt-0.5 inline-flex h-4 w-4 items-center justify-center rounded border border-slate-600 bg-slate-950/60">
+                        <i data-lucide="check" class="w-3 h-3 text-sky-300 hidden"></i>
+                      </button>
+                      <span>
+                        Ik ga akkoord met de <a href="#" class="underline underline-offset-2 hover:text-sky-200">privacyverklaring</a> en dat mijn gegevens gedeeld worden met de gekozen partner(s).
+                      </span>
+                    </div>
+                    <div class="space-y-2 pt-1">
+                      <button type="submit" id="lead-submit" class="w-full inline-flex items-center justify-center rounded-full bg-emerald-500 text-slate-950 text-sm md:text-base font-semibold tracking-tight px-4 py-2.5 hover:bg-emerald-400 transition-colors">
+                        Verzend mijn gegevens
+                        <i data-lucide="send" class="w-4 h-4 ml-2"></i>
+                      </button>
+                      <p id="lead-confirmation" class="hidden text-[0.65rem] md:text-xs text-emerald-300">
+                        Bedankt! We koppelen je zo snel mogelijk aan de juiste partner. Je ontvangt een bevestiging per e-mail.
+                      </p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Credits modal placeholder -->
+          <div id="credits-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/70 backdrop-blur-sm">
+            <div class="max-w-md w-full mx-4 rounded-2xl border border-slate-800 bg-slate-950 p-4 md:p-5 space-y-3">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h3 class="text-sm md:text-base font-semibold tracking-tight text-slate-50">
+                    Extra credits binnenkort beschikbaar
+                  </h3>
+                  <p class="text-xs md:text-sm text-slate-300 mt-1">
+                    Binnenkort kan je extra credits aankopen om meerdere woningen of scenario’s door de tool te halen (bijvoorbeeld eigen woning én investeringspand).
+                  </p>
+                </div>
+                <button id="credits-modal-close" class="text-slate-500 hover:text-slate-200">
+                  <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+              </div>
+              <ul class="text-xs md:text-sm text-slate-300 space-y-1">
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-300"></i>
+                  Extra scenario’s vergelijken (materialen, aannemers, timing)
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-300"></i>
+                  Meerdere adressen analyseren met één account
+                </li>
+              </ul>
+              <div class="pt-1">
+                <button id="credits-modal-ok" class="inline-flex items-center justify-center rounded-full bg-sky-500 text-slate-950 text-xs md:text-sm font-semibold tracking-tight px-4 py-2 hover:bg-sky-400 transition-colors">
+                  Begrijp ik
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FAQ ================= -->
+      <section id="faq" class="border-b border-slate-900 bg-slate-950">
+        <div class="max-w-6xl mx-auto px-4 py-10 md:py-14">
+          <div class="max-w-2xl">
+            <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-slate-50">
+              Veelgestelde vragen
+            </h2>
+            <p class="mt-3 text-base md:text-lg text-slate-300">
+              Transparante info over hoe de tool werkt, wat je kan verwachten en hoe we met je gegevens omgaan.
+            </p>
+          </div>
+
+          <div class="mt-8 space-y-3">
+            <!-- FAQ item -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80">
+              <button class="faq-toggle w-full flex items-center justify-between px-4 py-3 text-left">
+                <span class="text-sm md:text-base text-slate-100">Is de prijs die ik zie een definitieve offerte?</span>
+                <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400"></i>
+              </button>
+              <div class="faq-content px-4 pb-3 hidden">
+                <p class="text-xs md:text-sm text-slate-300">
+                  Nee. De prijs is een indicatieve raming op basis van jouw input en vergelijkbare projecten. De definitieve offerte wordt altijd opgesteld door de aannemer na een plaatsbezoek en eventuele bijkomende opmetingen.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ item -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80">
+              <button class="faq-toggle w-full flex items-center justify-between px-4 py-3 text-left">
+                <span class="text-sm md:text-base text-slate-100">Hoe worden aannemers geselecteerd?</span>
+                <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400"></i>
+              </button>
+              <div class="faq-content px-4 pb-3 hidden">
+                <p class="text-xs md:text-sm text-slate-300">
+                  We screenen iedere aannemer op referenties, vakbekwaamheid, financiële gezondheid en klantentevredenheid. Alleen partijen die onze kwaliteitscheck doorstaan, worden als partner toegelaten.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ item -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80">
+              <button class="faq-toggle w-full flex items-center justify-between px-4 py-3 text-left">
+                <span class="text-sm md:text-base text-slate-100">Wat gebeurt er met mijn gegevens?</span>
+                <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400"></i>
+              </button>
+              <div class="faq-content px-4 pb-3 hidden">
+                <p class="text-xs md:text-sm text-slate-300">
+                  Je gegevens worden veilig opgeslagen en enkel gedeeld met de partner(s) die jij selecteert. We verkopen je gegevens niet door aan willekeurige partijen. Je kan op elk moment vragen om je data te laten verwijderen.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ item -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80">
+              <button class="faq-toggle w-full flex items-center justify-between px-4 py-3 text-left">
+                <span class="text-sm md:text-base text-slate-100">Kan ik de tool meer dan één keer gebruiken?</span>
+                <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400"></i>
+              </button>
+              <div class="faq-content px-4 pb-3 hidden">
+                <p class="text-xs md:text-sm text-slate-300">
+                  Je krijgt één gratis krediet om de tool volledig te doorlopen. In een volgende fase zal je extra credits kunnen aankopen om meerdere scenario’s of adressen te analyseren.
+                </p>
+              </div>
+            </div>
+
+            <!-- FAQ item -->
+            <div class="rounded-2xl border border-slate-800 bg-slate-900/80">
+              <button class="faq-toggle w-full flex items-center justify-between px-4 py-3 text-left">
+                <span class="text-sm md:text-base text-slate-100">Worden premies automatisch meegenomen in de berekening?</span>
+                <i data-lucide="chevron-down" class="w-4 h-4 text-slate-400"></i>
+              </button>
+              <div class="faq-content px-4 pb-3 hidden">
+                <p class="text-xs md:text-sm text-slate-300">
+                  De tool toont een prijs <span class="font-semibold">zonder premies</span> om duidelijk te blijven. Je aannemer bekijkt samen met jou welke renovatie- en energiepremies van toepassing zijn en helpt bij de aanvraag, zodat jouw netto kost lager ligt.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FOOTER ================= -->
+      <footer class="bg-slate-950">
+        <div class="max-w-6xl mx-auto px-4 py-6 md:py-8 flex flex-col md:flex-row md:items-center md:justify-between gap-4 border-t border-slate-900">
+          <div class="flex items-center gap-2 text-xs md:text-sm text-slate-400">
+            <span class="text-slate-200 font-semibold tracking-tight">SmartAannemer</span>
+            <span class="h-1 w-1 rounded-full bg-slate-600"></span>
+            <span>Lead finder voor renovatieprojecten.</span>
+          </div>
+          <div class="flex flex-wrap items-center gap-4 text-xs md:text-sm text-slate-400">
+            <a href="#" class="hover:text-slate-200">Over ons</a>
+            </div></div></footer></main></div></body></html>
