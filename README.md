@@ -18,6 +18,23 @@ To get your Supabase credentials:
 
 The `NEXT_PUBLIC_APP_URL` is used for redirects and should point to your app's URL (default: http://localhost:3000 for development).
 
+## Database Setup
+
+To set up the database locally:
+
+1. Install Supabase CLI: `brew install supabase/tap/supabase`
+2. Start local Supabase: `npx supabase start`
+3. Apply migrations: `npx supabase db push`
+4. Get local credentials: `npx supabase status`
+
+### Seed Demo Data
+
+```bash
+npx supabase db reset  # Resets and seeds
+# Or manually:
+psql $DATABASE_URL < supabase/seed.sql
+```
+
 ## Getting Started
 
 First, run the development server:
