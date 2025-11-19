@@ -10,16 +10,24 @@ export const leadFinderFormSchema = z.object({
   city: z.string().min(2, 'Stad moet minimaal 2 karakters bevatten'),
 
   // Project details
-  projectType: z.enum(['roof', 'facade', 'insulation', 'solar', 'combo']),
-  buildingType: z.enum(['row', 'semi_detached', 'detached', 'apartment']),
+  projectType: z.enum(['roof', 'facade', 'insulation', 'solar', 'combo'], {
+    message: 'Selecteer een projecttype',
+  }),
+  buildingType: z.enum(['row', 'semi_detached', 'detached', 'apartment'], {
+    message: 'Selecteer een woningtype',
+  }),
   yearBuilt: z
     .number()
     .min(1900, 'Bouwjaar moet na 1900 zijn')
     .max(new Date().getFullYear(), 'Bouwjaar kan niet in de toekomst liggen')
     .nullable(),
-  urgency: z.enum(['1-3m', '3-6m', '6-12m', 'exploring']),
+  urgency: z.enum(['1-3m', '3-6m', '6-12m', 'exploring'], {
+    message: 'Selecteer wanneer je wilt starten',
+  }),
   budgetRange: z.tuple([z.number().min(0), z.number().min(0)]),
-  priority: z.enum(['price', 'balance', 'quality']),
+  priority: z.enum(['price', 'balance', 'quality'], {
+    message: 'Selecteer een prioriteit',
+  }),
 })
 
 /**
