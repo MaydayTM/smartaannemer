@@ -24,7 +24,9 @@ export class CreditsRepository {
     }
 
     // Generate new session token
-    const newToken = `sess_${Date.now()}_${Math.random().toString(36).substring(2, 15)}`
+    const timestamp = Date.now()
+    const randomStr = Math.random().toString(36).substring(2, 15)
+    const newToken = `sess_${timestamp}_${randomStr}`
 
     // Set cookie (expires in 30 days)
     (await cookies()).set(CREDIT_SESSION_COOKIE, newToken, {
