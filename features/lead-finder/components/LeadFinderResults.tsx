@@ -1,7 +1,7 @@
 'use client'
 
 import { useLeadFinderContext } from '../context/LeadFinderContext'
-import { CheckCircle2, Building, Award, Phone, Mail, ExternalLink } from 'lucide-react'
+import { CheckCircle2, Award, Phone, Mail, ExternalLink } from 'lucide-react'
 import { formatPriceRange } from '@/lib/utils/pricing'
 
 export function LeadFinderResults() {
