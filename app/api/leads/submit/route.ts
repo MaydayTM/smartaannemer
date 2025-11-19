@@ -42,6 +42,21 @@ export async function POST(request: NextRequest) {
 
     const contractors = await ContractorsRepository.findMatching(matchCriteria)
 
+    // Use a credit BEFORE creating the lead to prevent race conditions
+    // where a lead is created but credit usage fails
+    const creditResult = await CreditsRepository.useCredit()
+
+    if (!creditResult) {
+      return NextResponse.json(
+        { error: 'Failed to use credit' },
+        { status: 500 }
+      )
+    }
+
+    // TODO: For production, implement a credit refund mechanism in case
+    // lead creation fails after credit usage. Consider using database
+    // transactions or a two-phase commit pattern.
+
     // Create lead input
     const leadInput: CreateLeadInput = {
       ...formData,
@@ -60,9 +75,6 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
-
-    // Use a credit
-    await CreditsRepository.useCredit()
 
     // Return results
     return NextResponse.json({
