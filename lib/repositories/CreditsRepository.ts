@@ -12,13 +12,6 @@ const CREDITS_PER_SESSION = 1
  */
 export class CreditsRepository {
   /**
-   * Generate a secure session token
-   */
-  private static generateSessionToken(): string {
-    return `sess_${Date.now()}_${Math.random().toString(36).substring(2, 15)}`
-  }
-
-  /**
    * Get or create session token from cookies
    * @returns Session token
    */
@@ -31,7 +24,7 @@ export class CreditsRepository {
     }
 
     // Generate new session token
-    const newToken = CreditsRepository.generateSessionToken()
+    const newToken = `sess_${Date.now()}_${Math.random().toString(36).substring(2, 15)}`
 
     // Set cookie (expires in 30 days)
     (await cookies()).set(CREDIT_SESSION_COOKIE, newToken, {
