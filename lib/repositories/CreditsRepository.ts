@@ -23,7 +23,7 @@ export class CreditsRepository {
    * @returns Session token
    */
   static async getSessionToken(): Promise<string> {
-    const cookieStore = cookies()
+    const cookieStore = await cookies()
     const existingToken = cookieStore.get(CREDIT_SESSION_COOKIE)?.value
 
     if (existingToken) {
@@ -34,7 +34,7 @@ export class CreditsRepository {
     const newToken = this.generateSessionToken()
 
     // Set cookie (expires in 30 days)
-    cookieStore.set(CREDIT_SESSION_COOKIE, newToken, {
+    (await cookies()).set(CREDIT_SESSION_COOKIE, newToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
