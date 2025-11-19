@@ -3,28 +3,29 @@
 import { useState } from 'react'
 import { useLeadFinderContext } from '../context/LeadFinderContext'
 import { useCreditContext } from '@/features/credits/context/CreditContext'
+import { leadFinderFormSchema } from '@/lib/validation/lead-finder.schemas'
 import { Home, Building2, Calendar, Zap } from 'lucide-react'
 import type { ProjectType, BuildingType, Urgency, Priority } from '@/types/lead.types'
 
 export function LeadFinderForm() {
-  const { formData, setFormData, setCurrentStep, setIsLoading, setError } = useLeadFinderContext()
+  const { formData, setFormData, setEstimate, setMatchedContractors, setCurrentStep, setIsLoading, setError } = useLeadFinderContext()
   const { canUseCredit } = useCreditContext()
   const [errors, setErrors] = useState<Record<string, string>>({})
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    // Validate required fields
-    const newErrors: Record<string, string> = {}
+    // Validate form data using Zod schema
+    const validation = leadFinderFormSchema.safeParse(formData)
 
-    if (!formData.address) newErrors.address = 'Adres is verplicht'
-    if (!formData.postalCode) newErrors.postalCode = 'Postcode is verplicht'
-    if (!formData.city) newErrors.city = 'Stad is verplicht'
-    if (!formData.projectType) newErrors.projectType = 'Selecteer een projecttype'
-    if (!formData.buildingType) newErrors.buildingType = 'Selecteer een woningtype'
-    if (!formData.urgency) newErrors.urgency = 'Selecteer wanneer je wilt starten'
-
-    if (Object.keys(newErrors).length > 0) {
+    if (!validation.success) {
+      // Map Zod errors to error state
+      const newErrors: Record<string, string> = {}
+      validation.error.issues.forEach((err) => {
+        if (err.path.length > 0) {
+          newErrors[err.path[0].toString()] = err.message
+        }
+      })
       setErrors(newErrors)
       return
     }
@@ -51,6 +52,8 @@ export function LeadFinderForm() {
       const result = await response.json()
 
       // Update context with results
+      setEstimate(result.estimate)
+      setMatchedContractors(result.contractors)
       setCurrentStep('results')
     } catch (error) {
       setError('Er ging iets mis. Probeer het opnieuw.')
