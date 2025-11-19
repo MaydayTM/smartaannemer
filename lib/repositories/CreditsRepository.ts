@@ -2,7 +2,7 @@ import { createClient as createBrowserClient } from '@/lib/supabase/client'
 import { createClient as createServerClient } from '@/lib/supabase/server'
 import type { CreditSession, CreditStatus } from '@/types/credit.types'
 import { cookies } from 'next/headers'
-import { generateSessionToken } from '@/lib/utils/tokens'
+import { randomUUID } from 'crypto'
 
 const CREDIT_SESSION_COOKIE = 'smart_aannemer_session'
 const CREDITS_PER_SESSION = 1
@@ -24,8 +24,8 @@ export class CreditsRepository {
       return existingToken
     }
 
-    // Generate new session token
-    const newToken = generateSessionToken()
+    // Generate new session token using crypto.randomUUID()
+    const newToken = randomUUID()
 
     // Set cookie (expires in 30 days)
     (await cookies()).set(CREDIT_SESSION_COOKIE, newToken, {
