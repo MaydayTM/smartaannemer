@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { CreditProvider } from '@/features/credits'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +18,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="nl">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <CreditProvider>{children}</CreditProvider>
+      </body>
     </html>
   )
 }

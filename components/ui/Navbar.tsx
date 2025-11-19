@@ -2,6 +2,7 @@
 
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import { CreditStatusBar } from '@/features/credits'
 
 export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -42,6 +43,9 @@ export function Navbar() {
 
         {/* Actions */}
         <div className="flex items-center gap-2">
+          <div className="hidden md:block">
+            <CreditStatusBar />
+          </div>
           <button className="hidden md:inline-flex items-center gap-1 rounded-full border border-slate-700 bg-slate-900/80 px-4 py-1.5 text-xs md:text-sm text-slate-100 hover:border-slate-500 hover:bg-slate-900 transition-colors">
             <span>Log in</span>
           </button>
@@ -60,6 +64,9 @@ export function Navbar() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-slate-800 bg-slate-950/95">
+          <div className="px-4 pt-3 pb-2">
+            <CreditStatusBar />
+          </div>
           <nav className="flex flex-col px-4 py-3 text-sm">
             <a
               href="#how"
