@@ -2,7 +2,6 @@
 
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react'
 import type { CreditStatus } from '@/types/credit.types'
-import { CreditsRepository } from '@/lib/repositories/CreditsRepository'
 
 interface CreditContextType extends CreditStatus {
   isLoading: boolean
@@ -23,7 +22,11 @@ export function CreditProvider({ children }: { children: React.ReactNode }) {
   const refreshStatus = useCallback(async () => {
     try {
       setIsLoading(true)
-      const newStatus = await CreditsRepository.getStatusFromBrowser()
+      const response = await fetch('/api/credits/status')
+      if (!response.ok) {
+        throw new Error('Failed to fetch credit status')
+      }
+      const newStatus: CreditStatus = await response.json()
       setStatus(newStatus)
     } catch (error) {
       console.error('Failed to refresh credit status:', error)
@@ -35,12 +38,15 @@ export function CreditProvider({ children }: { children: React.ReactNode }) {
   const useCredit = useCallback(async (): Promise<boolean> => {
     try {
       setIsLoading(true)
-      const newStatus = await CreditsRepository.useCreditFromBrowser()
+      const response = await fetch('/api/credits/use', {
+        method: 'POST',
+      })
 
-      if (!newStatus) {
+      if (!response.ok) {
         return false
       }
 
+      const newStatus: CreditStatus = await response.json()
       setStatus(newStatus)
       return true
     } catch (error) {
