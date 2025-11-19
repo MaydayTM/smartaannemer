@@ -31,7 +31,7 @@ export class CreditsRepository {
     }
 
     // Generate new session token
-    const newToken = this.generateSessionToken()
+    const newToken = CreditsRepository.generateSessionToken()
 
     // Set cookie (expires in 30 days)
     (await cookies()).set(CREDIT_SESSION_COOKIE, newToken, {
