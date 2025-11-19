@@ -1,5 +1,6 @@
 import { createClient } from '@/lib/supabase/server'
 import type { CreateLeadInput, Lead } from '@/types/lead.types'
+import { calculateEstimate } from '@/lib/utils/pricing'
 
 /**
  * Repository for lead operations
@@ -59,6 +60,14 @@ export class LeadsRepository {
    * Map database row to Lead type
    */
   private static mapDatabaseToLead(row: any): Lead {
+    // Recalculate estimate breakdown from project parameters
+    // Breakdown values are not stored in database to avoid data duplication
+    const calculatedEstimate = calculateEstimate(
+      row.project_type,
+      row.building_type,
+      row.year_built
+    )
+
     return {
       id: row.id,
       createdAt: row.created_at,
@@ -80,12 +89,7 @@ export class LeadsRepository {
         min: row.estimate_min,
         max: row.estimate_max,
         currency: row.estimate_currency,
-        breakdown: {
-          materials: [0, 0],
-          labor: [0, 0],
-          scaffolding: [0, 0],
-          insulation: [0, 0],
-        },
+        breakdown: calculatedEstimate.breakdown,
       },
       matchedContractorIds: row.matched_contractor_ids || [],
       chosenContractorId: row.chosen_contractor_id,
