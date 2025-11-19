@@ -2,7 +2,7 @@ import { createClient as createBrowserClient } from '@/lib/supabase/client'
 import { createClient as createServerClient } from '@/lib/supabase/server'
 import type { CreditSession, CreditStatus } from '@/types/credit.types'
 import { cookies } from 'next/headers'
-import { randomUUID } from 'crypto'
+import { randomUUID } from 'node:crypto'
 
 const CREDIT_SESSION_COOKIE = 'smart_aannemer_session'
 const CREDITS_PER_SESSION = 1
@@ -24,8 +24,8 @@ export class CreditsRepository {
       return existingToken
     }
 
-    // Generate new session token using crypto.randomUUID()
-    const newToken = randomUUID()
+    // Generate new session token
+    const newToken = randomUUID() as string
 
     // Set cookie (expires in 30 days)
     (await cookies()).set(CREDIT_SESSION_COOKIE, newToken, {
@@ -44,7 +44,7 @@ export class CreditsRepository {
    * Creates a new session if one doesn't exist
    */
   static async getStatus(): Promise<CreditStatus> {
-    const supabase = createServerClient()
+    const supabase = await createServerClient()
     const sessionToken = await this.getSessionToken()
 
     // Try to find existing session
@@ -94,7 +94,7 @@ export class CreditsRepository {
    * @returns Updated credit status or null if no credits available
    */
   static async useCredit(): Promise<CreditStatus | null> {
-    const supabase = createServerClient()
+    const supabase = await createServerClient()
     const sessionToken = await this.getSessionToken()
 
     // Get current session
