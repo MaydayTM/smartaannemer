@@ -2,6 +2,7 @@
 
 import { LeadFinderProvider, useLeadFinderContext } from '../context/LeadFinderContext'
 import { LeadFinderForm } from './LeadFinderForm'
+import { ContactForm } from './ContactForm'
 import { LeadFinderResults } from './LeadFinderResults'
 import { Sparkles } from 'lucide-react'
 
@@ -40,8 +41,9 @@ function LeadFinderContent() {
           </div>
         ) : (
           <>
-            {/* Form or Results */}
+            {/* Multi-step wizard */}
             {currentStep === 'form' && <LeadFinderForm />}
+            {currentStep === 'contact' && <ContactForm />}
             {currentStep === 'results' && <LeadFinderResults />}
           </>
         )}

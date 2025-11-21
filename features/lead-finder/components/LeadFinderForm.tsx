@@ -35,31 +35,8 @@ export function LeadFinderForm() {
       return
     }
 
-    setIsLoading(true)
-    setError(null)
-
-    try {
-      const response = await fetch('/api/leads/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ formData }),
-      })
-
-      if (!response.ok) {
-        throw new Error('Failed to submit form')
-      }
-
-      const result = await response.json()
-
-      // Update context with results
-      setEstimate(result.estimate)
-      setMatchedContractors(result.contractors)
-      setCurrentStep('results')
-    } catch (error) {
-      setError('Er ging iets mis. Probeer het opnieuw.')
-    } finally {
-      setIsLoading(false)
-    }
+    // Move to contact form step
+    setCurrentStep('contact')
   }
 
   const projectTypes: { value: ProjectType; label: string; icon: any }[] = [
