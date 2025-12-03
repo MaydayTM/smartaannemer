@@ -1,16 +1,18 @@
 # SmartAannemer - Development Progress
 
-**Last Updated:** November 18, 2025
-**Branch:** `feature/nextjs-setup`
-**Status:** Landing page complete, ready for Lead Finder implementation
+**Last Updated:** December 3, 2025
+**Branch:** `main`
+**Production URL:** https://smartaannemer.be
+**Status:** MVP deployed, database integration pending
 
-## ✅ Completed (Phase 1-4)
+## ✅ Completed
 
 ### Project Foundation
-- [x] Next.js 14 initialized with TypeScript & Tailwind
-- [x] Project structure created (features/, lib/, components/, types/)
-- [x] Environment variables configured (.env.local.example)
-- [x] Git worktree set up for isolated development
+- [x] Next.js 16 with TypeScript & Tailwind
+- [x] Project structure (features/, lib/, components/, types/)
+- [x] Environment variables configured
+- [x] Deployed to Vercel
+- [x] Domain connected: smartaannemer.be
 
 ### Supabase Setup
 - [x] Supabase client configuration (browser & server)
@@ -19,154 +21,134 @@
   - `contractors` - Verified contractor database
   - `leads` - Lead submissions
 - [x] Row Level Security (RLS) policies configured
-- [x] Type generation script created
 - [x] Demo contractor seed data (3 contractors)
 
 ### Type Definitions
-- [x] `types/database.types.ts` - Generated Supabase types
+- [x] `types/database.types.ts` - Supabase types
 - [x] `types/contractor.types.ts` - Contractor interfaces
 - [x] `types/lead.types.ts` - Lead, form, estimate types
+- [x] `types/credit.types.ts` - Credit system types
 
 ### UI Components & Sections
-- [x] `components/ui/Navbar.tsx` - Responsive header with mobile menu
+- [x] `components/ui/Navbar.tsx` - Responsive header
 - [x] `components/ui/Footer.tsx` - Site footer
 - [x] `features/hero/` - Hero section with 3D viewer
 - [x] `features/quality-label/` - Quality verification section
 - [x] `features/how-it-works/` - 4-step process
 - [x] `features/reviews/` - Customer testimonials
 - [x] `features/faq/` - Interactive FAQ accordion
-- [x] `app/layout.tsx` - Root layout with metadata
-- [x] `app/page.tsx` - Landing page assembly
 
-### Current Commits (Ready to Push)
-```
-5546ba0 feat: add all content sections to landing page
-6114c5a feat: add FAQ section with accordion
-53fe988 feat: add Reviews section with customer testimonials
-f06d2a5 feat: add How It Works section with 4-step process
-7211d84 feat: add Quality Label section with verification criteria
-525dcc1 feat: assemble Navbar, Hero, and Footer into landing page
-b6cec5d feat: add Hero section with 3D viewer
-1b309f1 feat: update root layout with metadata
-8e54bab feat: add Footer component
-5da48d5 feat: add Navbar component with mobile menu
-ddebd41 feat: add TypeScript type definitions for core domain
-0847887 feat: add demo contractor seed data
-f629c94 feat: add database type generation script
-22a37e2 feat: add initial database schema with RLS policies
-6afc6bc feat: add Supabase client configuration
-fb5fd2c feat: add environment variable template
-042a82a feat: Create project directory structure
-```
+### Credit System
+- [x] `features/credits/context/CreditContext.tsx` - State management
+- [x] `features/credits/components/CreditStatusBar.tsx` - UI component
+- [x] `lib/repositories/CreditsRepository.ts` - Database operations
+- [x] `app/api/credits/route.ts` - GET credit status
+- [x] `app/api/credits/use/route.ts` - POST use credit
+
+### Lead Finder Tool
+- [x] `features/lead-finder/context/LeadFinderContext.tsx` - Form state
+- [x] `features/lead-finder/components/LeadFinderForm.tsx` - Input form
+- [x] `features/lead-finder/components/LeadFinderResults.tsx` - Results display
+- [x] `features/lead-finder/components/LeadFinderSection.tsx` - Container
+- [x] `lib/utils/pricing.ts` - Price calculation formulas
+- [x] `lib/repositories/ContractorsRepository.ts` - Contractor matching
+- [x] `app/api/contractors/match/route.ts` - API endpoint
 
 ## 📍 Current State
 
-**Working Directory:** `/Users/mehdimichiels/smartaannemer/.worktrees/nextjs-setup`
+**Production:** https://smartaannemer.be (LIVE)
 
-**Dev Server:** Running at http://localhost:3000
+**What's Working:**
+- Complete landing page with all sections
+- Lead Finder UI (form + results display)
+- Local price calculations
+- Credit status tracking (localStorage)
+- Responsive design
 
-**What's Live:**
-- Complete landing page with 6 sections
-- Fully responsive design (mobile/tablet/desktop)
-- Interactive components (mobile menu, FAQ accordion)
-- All content sections styled and functional
+**What's NOT Working Yet:**
+- Database calls (Supabase env vars not set on Vercel)
+- Contractor matching from database
+- Credit persistence across sessions
 
-## 🚀 To Push to GitHub (Tomorrow)
+## 🚀 Tasks for Tomorrow (December 4, 2025)
 
-Run this command when GitHub is back up:
-```bash
-git push -u origin feature/nextjs-setup
-```
+### Priority 1: Supabase Integration
+1. [ ] Create Supabase project (if not exists)
+2. [ ] Run database migrations
+3. [ ] Seed demo contractors
+4. [ ] Add environment variables to Vercel:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY`
+5. [ ] Redeploy and test database connection
 
-## 📋 Next Steps (Tomorrow's Work)
+### Priority 2: Lead Capture Flow
+1. [ ] Create LeadsRepository
+2. [ ] Add contact form to LeadFinderResults
+3. [ ] Implement lead submission API route
+4. [ ] Test full flow: form → estimate → contractor → contact
 
-According to the implementation plan (`docs/plans/2025-01-18-smartaannemer-implementation.md`), the next phase is:
+### Priority 3: Security Hardening
+1. [ ] Add rate limiting to API endpoints
+2. [ ] Move session token to httpOnly cookie
+3. [ ] Verify RLS policies work correctly
+4. [ ] Add input validation with Zod
 
-### Phase 5: Credit System (Tasks 19-25)
-Implement the credit tracking system:
+### Priority 4: Polish
+1. [ ] Add loading states
+2. [ ] Improve error messages (Dutch)
+3. [ ] Test mobile responsiveness
+4. [ ] Add analytics (optional)
 
-1. **Create CreditContext** (`features/credits/context/CreditContext.tsx`)
-   - State: creditsTotal, creditsUsed, isLoading, canUseCredit
-   - Actions: useCredit(), refreshStatus()
+## 🔒 Security Notes
 
-2. **Create CreditsRepository** (`lib/repositories/CreditsRepository.ts`)
-   - Methods: getStatus(), useCredit(), createSession()
-   - Handles session token generation and cookie management
+### Completed
+- ✅ HTTPS enforced
+- ✅ HSTS header active
+- ✅ No hardcoded secrets
+- ✅ Env files in .gitignore
+- ✅ Cryptographic session tokens
 
-3. **Create Credit UI Components**
-   - CreditStatusBar - Shows "1/1 gratis krediet beschikbaar"
-   - CreditModal - Displays when credit is exhausted
+### TODO
+- ⚠️ Rate limiting
+- ⚠️ Token in URL → move to POST/header
+- ⚠️ Verify Supabase RLS in production
 
-4. **Session Management**
-   - Generate session tokens (httpOnly cookies)
-   - Track credit usage in database
-   - Handle credit exhaustion state
+## 📁 Key Files
 
-### Phase 6: Lead Finder Tool (Tasks 26-35)
-The main interactive tool:
+| File | Purpose |
+|------|---------|
+| `docs/plans/2025-01-18-smartaannemer-implementation.md` | Full implementation plan |
+| `docs/plans/2025-01-18-smartaannemer-react-app-design.md` | Architecture design |
+| `supabase/migrations/20250118000001_initial_schema.sql` | Database schema |
+| `supabase/seed.sql` | Demo data |
 
-1. **LeadFinderContext** - Form state management
-2. **LeadFinderForm** - User inputs (address, project type, building info)
-3. **Pricing utilities** - Calculate estimates
-4. **Repositories** - EstimateRepository, ContractorsRepository, LeadsRepository
-5. **LeadFinderResults** - Display estimate and contractors
-6. **Form validation** - Zod schemas
-
-### Phase 7: Integration & Testing
-- End-to-end flow testing
-- Deploy to Vercel
-- Production environment setup
-
-## 📁 Important Files
-
-**Implementation Plan:**
-`docs/plans/2025-01-18-smartaannemer-implementation.md`
-
-**Design Document:**
-`docs/plans/2025-01-18-smartaannemer-react-app-design.md`
-
-**Environment Setup:**
-`.env.local` (local, not committed)
-`.env.local.example` (template, committed)
-
-**Database:**
-`supabase/migrations/20250118000001_initial_schema.sql`
-`supabase/seed.sql`
-
-## 🛠️ Development Commands
+## 🛠️ Commands
 
 ```bash
-# Start dev server
+# Development
 npm run dev
 
-# Build for production
+# Build
 npm run build
 
-# Generate database types
-npm run types:generate
+# Deploy
+vercel --prod
 
-# Supabase local development
+# Supabase
 npx supabase start
 npx supabase db push
-npx supabase db reset  # Includes seed data
+npx supabase db reset
 ```
 
-## ✅ Quality Checks
+## 📊 Deployment Info
 
-All commits have been verified with:
-- ✓ TypeScript compilation (no errors)
-- ✓ Next.js production build (successful)
-- ✓ All files committed (clean working tree)
-
-## 📝 Notes
-
-- Using Next.js 14 App Router (not Pages Router)
-- Feature-based architecture (not component-based)
-- Repository pattern for all database operations
-- React Context for state management (no Redux/Zustand)
-- Tailwind CSS with design tokens from mockup
-- Session-based credit tracking (no auth yet in MVP)
+| Service | URL |
+|---------|-----|
+| Production | https://smartaannemer.be |
+| Vercel Dashboard | https://vercel.com/mayday1/smartaannemer |
+| GitHub Repo | https://github.com/MaydayTM/smartaannemer |
 
 ---
 
-**Ready to continue with the Credit System implementation tomorrow!**
+**Status: MVP deployed, ready for Supabase integration!**
