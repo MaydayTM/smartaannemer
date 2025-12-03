@@ -66,13 +66,14 @@
 - Responsive design
 
 **What's NOT Working Yet:**
-- Database calls (Supabase env vars not set on Vercel)
+- Database calls → 500 errors on `/api/credits/use` (Supabase env vars not set on Vercel)
 - Contractor matching from database
 - Credit persistence across sessions
+- Login functionality (not built yet)
 
 ## 🚀 Tasks for Tomorrow (December 4, 2025)
 
-### Priority 1: Supabase Integration
+### Priority 1: Supabase Integration (fixes 500 errors)
 1. [ ] Create Supabase project (if not exists)
 2. [ ] Run database migrations
 3. [ ] Seed demo contractors
@@ -81,20 +82,28 @@
    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
    - `SUPABASE_SERVICE_ROLE_KEY`
 5. [ ] Redeploy and test database connection
+6. [ ] Verify credit system works end-to-end
 
-### Priority 2: Lead Capture Flow
+### Priority 2: User Authentication
+1. [ ] Set up Supabase Auth
+2. [ ] Create login/register pages
+3. [ ] Add auth context and hooks
+4. [ ] Protect routes that need authentication
+5. [ ] Connect credits to user accounts (instead of session)
+
+### Priority 3: Lead Capture Flow
 1. [ ] Create LeadsRepository
 2. [ ] Add contact form to LeadFinderResults
 3. [ ] Implement lead submission API route
 4. [ ] Test full flow: form → estimate → contractor → contact
 
-### Priority 3: Security Hardening
+### Priority 4: Security Hardening
 1. [ ] Add rate limiting to API endpoints
 2. [ ] Move session token to httpOnly cookie
 3. [ ] Verify RLS policies work correctly
 4. [ ] Add input validation with Zod
 
-### Priority 4: Polish
+### Priority 5: Polish
 1. [ ] Add loading states
 2. [ ] Improve error messages (Dutch)
 3. [ ] Test mobile responsiveness
