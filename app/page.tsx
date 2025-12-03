@@ -5,6 +5,7 @@ import { QualityLabelSection } from '@/features/quality-label'
 import { HowItWorksSection } from '@/features/how-it-works'
 import { ReviewsSection } from '@/features/reviews'
 import { FAQSection } from '@/features/faq'
+import { LeadFinderSection } from '@/features/lead-finder'
 
 export default function HomePage() {
   return (
@@ -15,8 +16,8 @@ export default function HomePage() {
         <QualityLabelSection />
         <HowItWorksSection />
         <ReviewsSection />
+        <LeadFinderSection />
         <FAQSection />
-        {/* Lead Finder section will be added next */}
       </main>
       <Footer />
     </>
